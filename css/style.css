@@ -10,7 +10,11 @@ body {
 
 .container-header {
     width: 95%;
+    height: 100px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #play-game {
@@ -30,16 +34,34 @@ body {
     cursor: pointer;
 }
 
+#level {
+    margin-top: 30px;
+    background-color: yellow;
+    border: none;
+    color: blueviolet;
+    padding: 10px;
+    border-radius: 0px;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+#level:hover {
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+
 .container {
-    width: 1000px;
-    height: 1000px;
-    background-color: deeppink;
     margin: 3rem auto;
+    justify-content: center;
+    display: flex;
 }
 
 .grid {
     display: flex;
     flex-wrap: wrap;
+    width: 32rem;
+    height: 30rem;
 }
 
 .square {
