@@ -34,6 +34,18 @@ body {
     cursor: pointer;
 }
 
+#score-container {
+    font-size: 15pt;
+    color: yellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 30px;
+}
+
+#score {
+    color: yellowgreen;
+    font-weight: bold;
+}
+
 #level {
     margin-top: 30px;
     background-color: yellow;
@@ -65,7 +77,7 @@ body {
 }
 
 .square {
-    background-color: deeppink;
+    background-color: yellow;
     color: blueviolet;
     border: 1px solid blueviolet;
     width: 100px;
@@ -78,4 +90,12 @@ body {
 .clicked {
     background-color: turquoise;
     cursor: pointer;
+}
+
+.red {
+    background-color: red;
+}
+
+.events-none {
+    pointer-events: none;
 }
