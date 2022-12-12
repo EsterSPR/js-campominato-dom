@@ -1,46 +1,26 @@
-document.getElementById('play-game').addEventListener('click', function (){
-    // generateGameGrid();
-    createNewGame();
-})
-
-
-// let arrayBombs = [];
-// arrayBombs = createBombsArray(1, cellsNumber);
-// console.log(arrayBombs);
-
 //FUNZIONI
 
-// function generateGameGrid() {
-//     document.querySelector('.grid').innerHTML = '';
-//     for(let i = 0; i < 100; i++){
-//         const cell = document.createElement('div');
-//         cell.classList.add('square');
-//         cell.innerText =i+1;
-//         cell.addEventListener('click', function(){
-//             this.classList.toggle('clicked');
-//             console.log(this.innerText);
-//         });
-//         document.querySelector('.grid').appendChild(cell);
-//     }
-// }
+function createBombsArray(min, max) {
+    let bombs = [];
+    let i = 0;
+    while(i < 16){
+        let number = Math.floor(Math.random() * (max - min + 1)) + min;
 
-// function createBombsArray(min, max) {
-//     let bombs = [];
-//     let i = 0;
-//     while (i < 16){
-//         let number = Math.floor(Math.random() * (max - min + 1)) + min;
+        if (!bombs.includes(number)){
+            bombs.push(number);
+            i++;
+        }
 
-//         if (!bombs.includes(number)){
-//             bombs.push(number);
-//             i++;
-//         }
+        return bombs;
+    }
+}
 
-//         return bombs;
-//     }
-// }
+//VIDEOLEZIONE 58:13 CIRCA
 
 function createNewGame(){
     let difficulty = parseInt(document.getElementById('level').value);
+
+    let arrayBombs = [];
 
     let cellsNumber;
     let cellsPerRow;
@@ -63,6 +43,9 @@ function createNewGame(){
             cellsPerRow = 10;
             break;
     }
+
+    arrayBombs = createBombsArray(1, cellsNumber);
+    console.log(arrayBombs);
 
     generateGameGrid(cellsNumber, cellsPerRow);
 }
@@ -98,3 +81,10 @@ function generateGameGrid(cellsNumber, cellsPerRow){
 
     document.querySelector('.container').appendChild(grid);
 }
+
+//CORPO
+
+document.getElementById('play-game').addEventListener('click', function (){
+    // generateGameGrid();
+    createNewGame();
+})
