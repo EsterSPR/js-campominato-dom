@@ -10,12 +10,10 @@ function createBombsArray(min, max) {
             bombs.push(number);
             i++;
         }
-
-        return bombs;
     }
-}
 
-//VIDEOLEZIONE 58:13 CIRCA
+    return bombs;
+}
 
 function createNewGame(){
     let difficulty = parseInt(document.getElementById('level').value);
